@@ -45,7 +45,7 @@ export default {
                     children: [
                         {
                             name: '菜谱-详情',
-                            path: '/menuDetail'
+                            path: '/menu/menuDetail'
                         }
                     ]
                 },
@@ -55,7 +55,7 @@ export default {
                     children: [
                         {
                             name: '食材-详情',
-                            path: '/foodsDetail'
+                            path: '/foods/foodsDetail'
                         }
                     ]
                 },
@@ -65,7 +65,7 @@ export default {
                     children: [
                         {
                             name: '哪里好吃-详情',
-                            path: '/foragingDetail'
+                            path: '/foraging/foragingDetail'
                         }
                     ]
                 },
@@ -75,7 +75,7 @@ export default {
                     children: [
                         {
                             name: '资讯-详情',
-                            path: '/informationDetail'
+                            path: '/information/informationDetail'
                         }
                     ]
                 }
@@ -88,6 +88,7 @@ export default {
     created () {},
     methods: {
         init(){
+            console.log('this.$route', this.$route)
             this.curIndex = 0;
             this.tabList.forEach((item, index) => {
                 if (this.$route.path.includes(item.path)){
@@ -100,6 +101,7 @@ export default {
                     });
                 }
             });
+            console.log('this.curIndex', this.curIndex)
         }
     },
      watch: {

@@ -1,8 +1,8 @@
 <template>
-    <div class="foods-container">
+    <div class="menu-container">
         <div class="">
             <!-- 内容 -->
-            我是食材页面1111
+            我是菜谱内容
         </div>
         <!-- 加载动效 -->
         <Loading v-if="showLoading"></Loading>
