@@ -2,7 +2,7 @@
     <div id="header">
         <div class="box-container">
             <div class="header-logo">
-                <img src="../assets/images/food-world-logo.jpg" alt="">
+                <img :src="logoUrl" alt="">
             </div>
             <ul class="header-tab">
                 <template v-for="(item, index) in tabList">
@@ -31,6 +31,7 @@ export default {
     name: '',
     data () {
         return {
+            logoUrl:require('@/assets/images/food-world-logo.jpg'),
             curIndex: 0, // 选中的索引
             tabList: [
                 {

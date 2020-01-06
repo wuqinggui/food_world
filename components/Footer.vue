@@ -3,24 +3,24 @@
         <div class="box-container f14 p20">
             <div class="row ju-b">
                 <div class="flex-1 verticle-center">
-                    <img src="../assets/images/food-world-logo.jpg" alt="">
+                    <img :src="logoUrl" alt="">
                     <span class="f16 fw ml20">美食天下 - 让吃更美好！</span>
                 </div>
                 <div class="clearfix">
                     <div class="mb10">更多方式关注</div>
                     <div class="mr20 pull-left">
-                        <img src="../assets/images/wx-qrcood.jpg" alt="" class="wx-cood-img">
+                        <img :src="qrcoodUrl" alt="" class="wx-cood-img">
                         <div class="text-center mt5">关注微信公众号</div>
                     </div>
                     <div class="pull-left">
-                        <img src="../assets/images/wx-smallRoutine.jpg" alt="" class="wx-smallRoutine-img">
+                        <img :src="smallRoutineUrl" alt="" class="wx-smallRoutine-img">
                         <div class="text-center mt5">微信扫一扫</div>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright gray6 lh100 f14 p10 mt20 verticle-center">
                 <span>版权所有 © 2004-2019 美食天下 保留所有权利 -</span>
-                <img src="../assets/images/copyright-icon.jpg" alt="" class="copyright-icon">
+                <img :src="copyrightUrl" alt="" class="copyright-icon">
                 <span>京公网安备 11010502031041号 / 京ICP证090244号 / 京ICP备10020153号</span>
             </div>
         </div>
@@ -32,7 +32,10 @@ export default {
     name: '',
     data () {
         return {
-
+            logoUrl:require('@/assets/images/food-world-logo.jpg'),
+            qrcoodUrl:require('@/assets/images/wx-qrcood.jpg'),
+            smallRoutineUrl:require('@/assets/images/wx-smallRoutine.jpg'),
+            copyrightUrl:require('@/assets/images/copyright-icon.jpg')
         }
     },
     mounted () {
@@ -52,9 +55,16 @@ export default {
         width: 100px;
         height: 100px;
     }
-    .copyright-icon{
-        width: 26px;
-        height: 26px;
+    .footer-copyright {
+        display: flex;
+        flex-direction: row;
+        // justify-items: center;
+        align-items: center;
+        justify-content: center;
+        .copyright-icon{
+            width: 26px;
+            height: 26px;
+        }
     }
 }
 </style>
