@@ -1,8 +1,6 @@
-$themeColor:#000;
+$themeColor:#ffb800;
 
 /* 重置elementUI样式 */
-.main {
-background: #e6e7eb;
 .el-button--primary {
     background: $themeColor;
     border-color: $themeColor;
@@ -162,7 +160,6 @@ background: #e6e7eb;
     height: 178px;
     display: block;
 }
-}
 .el-select-dropdown__item.selected {
 color: $themeColor !important;
 }
@@ -241,3 +238,18 @@ color: $themeColor !important;
 .el-date-table td.end-date span, .el-date-table td.start-date span {
 background-color: $themeColor !important;
 }
+.el-tabs__active-bar {
+    background-color: #ffb800;
+    height: 3px;
+  }
+  .el-tabs__item {
+    &:hover {
+      color: #ffb800;
+    }
+    &.is-active {
+      color: #ffb800;
+    }
+  }
+  .el-tabs__nav-wrap::after {
+    background: none;
+  }
