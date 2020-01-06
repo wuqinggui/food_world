@@ -2,7 +2,7 @@
     <div class="foods-container">
         <div class="">
             <!-- 内容 -->
-            我是食材页面
+            我是食材页面1111
         </div>
         <!-- 加载动效 -->
         <Loading v-if="showLoading"></Loading>
