@@ -17,10 +17,10 @@
                         <div class="text-center mt5">微信扫一扫</div>
                     </div>
                 </div>
-
             </div>
-            <div class="footer-copyright gray6 lh100 f14 p10 mt20 text-center">
+            <div class="footer-copyright gray6 lh100 f14 p10 mt20 verticle-center">
                 <span>版权所有 © 2004-2019 美食天下 保留所有权利 -</span>
+                <img src="../assets/images/copyright-icon.jpg" alt="" class="copyright-icon">
                 <span>京公网安备 11010502031041号 / 京ICP证090244号 / 京ICP备10020153号</span>
             </div>
         </div>
@@ -51,6 +51,10 @@ export default {
     .wx-cood-img, .wx-smallRoutine-img {
         width: 100px;
         height: 100px;
+    }
+    .copyright-icon{
+        width: 26px;
+        height: 26px;
     }
 }
 </style>

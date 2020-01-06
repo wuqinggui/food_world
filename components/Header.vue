@@ -1,23 +1,21 @@
 <template>
     <div id="header">
-        <div class="headers-container">
+        <div class="box-container">
             <div class="header-logo">
-                <div class="logo-img"></div>
+                <img src="../assets/images/food-world-logo.jpg" alt="">
             </div>
-            <div class="header-tab">
-                <ul>
-                    <template v-for="(item, index) in tabList">
-                        <router-link
-                            :class="['tab-item', {'act': curIndex === index}]"
-                            :key="index"
-                            :to="item.path"
-                            tag="li"
-                            @click.native="curIndex = index">
-                            {{item.name}}
-                        </router-link>
-                    </template>
-                </ul>
-            </div>
+            <ul class="header-tab">
+                <template v-for="(item, index) in tabList">
+                    <router-link
+                        :class="['tab-item', {'act': curIndex === index}]"
+                        :key="index"
+                        :to="item.path"
+                        tag="li"
+                        @click.native="curIndex = index">
+                        {{item.name}}
+                    </router-link>
+                </template>
+            </ul>
             <div class="header-search">
                 搜索
             </div>
@@ -88,7 +86,6 @@ export default {
     created () {},
     methods: {
         init(){
-            console.log('this.$route', this.$route)
             this.curIndex = 0;
             this.tabList.forEach((item, index) => {
                 if (this.$route.path.includes(item.path)){
@@ -101,6 +98,7 @@ export default {
                     });
                 }
             });
+            console.log('this.$route', this.$route)
             console.log('this.curIndex', this.curIndex)
         }
     },
@@ -115,9 +113,9 @@ export default {
 <style lang="scss">
 // 公共头部
 #header {
-    background: #fff;
     width: 100%;
-    margin: 0 auto;
-    height: 80px;
+    height: 60px;
+    background: #fff;
+    box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.08);
 }
 </style>
