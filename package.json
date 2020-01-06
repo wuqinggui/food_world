@@ -1,0 +1,24 @@
+{
+  "name": "food_world",
+  "version": "1.0.0",
+  "description": "美食天下",
+  "author": "qinggui",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "element-ui": "^2.4.11",
+    "@xunlei/vue-lazy-component": "^1.1.3",
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "vue-lazyload": "^1.2.6"
+  }
+}
