@@ -6,7 +6,7 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+	padding: 0;
 }
 
 html { height: 100%; -webkit-text-size-adjust: 100%; }
@@ -28,10 +28,6 @@ input::-ms-reveal{display: none;}
 @font-face {
     font-family: 'IBMPlexSerif-TextItalic';
     src: url('../font/IBMPlexSerif-TextItalic.ttf') format('truetype');
-}
-
-.font-family{
-	font-family:PingFangSC-Light !important;
 }
 
 .clearfix:after {
