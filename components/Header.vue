@@ -21,7 +21,7 @@
             <div class="header-search">
                 搜索
             </div>
-            <div class="pull-right">
+            <div class="">
                 注册/登陆
             </div>
         </div>

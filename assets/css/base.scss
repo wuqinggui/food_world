@@ -30,6 +30,10 @@ input::-ms-reveal{display: none;}
     src: url('../font/IBMPlexSerif-TextItalic.ttf') format('truetype');
 }
 
+.font-family{
+	font-family:PingFangSC-Light !important;
+}
+
 .clearfix:after {
 	content: '\200B';
 	display: block;
@@ -1155,4 +1159,9 @@ input:-moz-placeholder {
 .word {
 	word-wrap: break-word; /*自动换行*/
 	word-break: break-all;
+}
+
+.box-container{
+	width: 1024px;
+	margin: 0 auto;
 }
