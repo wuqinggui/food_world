@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <div id="nuxt-container">
-      <nuxt />
+      <nuxt class="box-container p20"/>
     </div>
     <Footer></Footer>
   </div>
@@ -14,6 +14,7 @@
   import Router from 'vue-router'
   import Vue from 'vue'
   Vue.use(Router)
+
   export default {
     data(){
       return{
@@ -26,8 +27,8 @@
     },
     created(){},
     mounted () {
-      this.$nextTick(() => {
-          //  根据窗口大小获取主内容的最小高度
+      // this.$nextTick(() => {
+      //     //  根据窗口大小获取主内容的最小高度
           var clientHeight = document.body.clientHeight;
           var headerHeight = document.getElementById("header").clientHeight;
           var footerHeight = document.getElementById("footer").clientHeight;
@@ -35,7 +36,7 @@
           if (nuxtHeight > 0) {
             document.getElementById("nuxt-container").style.minHeight = nuxtHeight + 'px';
           }
-				})
+			// 	})
     },
     methods:{}
   }

@@ -1111,10 +1111,20 @@ input:-moz-placeholder {
 	-ms-flex: 1; /* IE 10 */
 	flex: 1; /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
+// 竖直居中
 .verticle-center {
 	display: flex;
 	// justify-items: center;
 	align-items: center;
+}
+
+// 竖直水平居中
+.direction-center{
+	display: flex;
+	flex-direction: row;
+	// justify-items: center;
+	align-items: center;
+	justify-content: center;
 }
 
 /*布局*/

@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright gray6 lh100 f14 p10 mt20 verticle-center">
+            <div class="direction-center gray6 lh100 f14 p10 mt20">
                 <span>版权所有 © 2004-2019 美食天下 保留所有权利 -</span>
                 <img :src="copyrightUrl" alt="" class="copyright-icon">
                 <span>京公网安备 11010502031041号 / 京ICP证090244号 / 京ICP备10020153号</span>
@@ -55,16 +55,9 @@ export default {
         width: 100px;
         height: 100px;
     }
-    .footer-copyright {
-        display: flex;
-        flex-direction: row;
-        // justify-items: center;
-        align-items: center;
-        justify-content: center;
-        .copyright-icon{
-            width: 26px;
-            height: 26px;
-        }
+    .copyright-icon{
+        width: 26px;
+        height: 26px;
     }
 }
 </style>

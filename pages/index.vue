@@ -4,6 +4,7 @@
             <!-- 内容 -->
             我是首页内容
         </div>
+        
         <!-- 加载动效 -->
         <Loading v-if="showLoading"></Loading>
     </div>
@@ -16,7 +17,7 @@ export default {
     data () {
         return {
             // 全屏加载
-            showLoading:false,
+            showLoading:false
         }
     },
     components:{
@@ -32,7 +33,7 @@ export default {
         
     },
     methods: {
-
+        
     },
     watch: {
         

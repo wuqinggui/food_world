@@ -23,7 +23,7 @@ export default {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css',
+    // 'element-ui/lib/theme-chalk/index.css', // element-variables.scss已更好主题颜色，此次无需引入 Element 编译好的 CSS 文件
     // 项目中的sass文件
     {src:'~assets/css/export.scss', lang:'scss'}, //lang指定scss 而非sass
   ],
@@ -32,7 +32,7 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    { src: "~/plugins/vue-lazyload.js" ,ssr: false}
+    { src: "~/plugins/vue-lazyload.js" ,ssr: false},
   ],
   /*
   ** Nuxt.js dev-modules
