@@ -252,6 +252,6 @@ $themeColor:#ffb800;
 //       color: #ffb800;
 //     }
 //   }
-//   .el-tabs__nav-wrap::after {
-//     background: none;
-//   }
+  .el-tabs__nav-wrap::after {
+    background: none !important;
+  }

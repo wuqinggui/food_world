@@ -1,6 +1,6 @@
 <template>
   <!-- 菜谱页内容 -->
-  <div class="menu-container box-container">
+  <div class="menu-container box-container mt20">
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane label="精选" name="first">
         <div class="carefully">
@@ -93,10 +93,16 @@
             <div class="title">精选</div>
           </div>
           <div class="boutiqueList">
-            <el-row :gutter="80">
+            <el-row :gutter="60">
               <el-col :span="6" v-for="(item, index) in foodObj" :key="index">
                 <div class="grid-content bg-purple" @click="goBoutique">
-                  <img :src="item.url" alt="" />
+                  <div class="imgs">
+                      <img v-lazy="item.url" alt="" />
+                      <div class="img-bg"></div>
+                        <div class="txt">
+                          <p>这个菜好评这个菜好评这个菜好评这个菜好评</p>
+                        </div>
+                  </div>
                   <p>{{ item.name }}</p>
                 </div>
               </el-col>
@@ -131,10 +137,9 @@
                 :span="2"
                 v-for="(item2, index2) in item.list"
                 :key="index2"
-                @click="goMeatDetail"
               >
-                <div class="grid-content bg-purple">
-                  <img :src="item2.url" alt="" />
+                <div class="grid-content bg-purple" @click="goBoutique">
+                  <img v-lazy="item2.url" alt="" />
                   <p>{{ item2.name }}</p>
                 </div>
               </el-col>
@@ -615,11 +620,8 @@ export default {
         this.isHeight4 = !this.isHeight4;
       }
     },
-    // 肉类详情
-    goMeatDetail() {},
     // 菜谱详情
     goBoutique () {
-      console.log(11111);
         this.$router.push({
                 path: '/menu/menuDetail',
             });
