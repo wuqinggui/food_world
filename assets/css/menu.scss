@@ -1,88 +1,168 @@
 .menu-container {
-  .menu-header {
+  .el-tabs__content {
+    margin-bottom: 100px;
+  }
+
+  .carefully {
+    .con-table {
+      .type-row {
+        border-bottom: 1px solid #dcdcdc;
+        display: flex;
+        font-size: 14px;
+        padding: 12px 0;
+        position: relative;
+
+        .height-auto {
+          height: auto !important;
+        }
+
+        .select-right {
+          margin-right: 16px;
+        }
+
+        .type-row-tit {
+          font-weight: bold;
+          color: #333333;
+          margin-right: 24px;
+          width: 60px;
+          text-align: right;
+          line-height: 31px;
+        }
+
+        .product-type {
+          line-height: 32px !important;
+        }
+
+        ul,
+        ol {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          color: #7D7D7D;
+          width: 90%;
+          height: 31px;
+          overflow: hidden;
+
+          span {
+            margin: 3px 15px 3px 0;
+            padding: 2px 5px;
+            display: inline-block;
+            cursor: pointer;
+          }
+        }
+
+        .active {
+          background: #000;
+          color: #fff;
+        }
+
+        .more {
+          position: absolute;
+          top: 15px;
+          right: 0;
+          cursor: pointer;
+
+          .icon-arrow {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+          }
+
+          .arrow-top {
+            background: url(../images/arrow_top.png) no-repeat 0 0;
+            background-size: cover;
+          }
+
+          .arrow-bottom {
+            background: url(../images/arrow_bottom.png) no-repeat 0 0;
+            background-size: cover;
+          }
+        }
+      }
+    }
+
     .lookAll {
       display: block;
       text-align: center;
       line-height: 50px;
       color: #5188a6;
     }
+    .h2 {
+      .title {
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+    }
+
     .boutiqueList {
-      ul {
-        li {
-          .img {
-            width: 220px;
-            height: 220px;
-          }
-          p {
-            font-size: 15px;
-            line-height: 32px;
-          }
+
+      .el-col-6 {
+        cursor: pointer;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  
+
+  .type_classify {
+
+    .h2 {
+      padding: 20px 0;
+
+      .title {
+        padding-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 40px;
+      }
+
+      .classify {
+        span {
+          cursor: pointer;
+          color: #333333;
+          display: inline-block;
+          font-size: 15px;
+          margin: 0 50px 28px 0;
         }
       }
     }
-    .con-table {
-      .type-row{
-         border-bottom: 1px solid #dcdcdc;
-         display: flex;
-         font-size: 14px;
-         padding: 12px 0;
-         position: relative;
-         .height-auto{
-             height: auto !important;
-         }
-         .select-right{
-             margin-right: 16px;
-         }
-         .type-row-tit {
-             font-weight: bold;
-             color: #333333;
-             margin-right: 24px;
-             width: 60px;
-             text-align: right;
-             line-height: 31px;
-         }
-         .product-type{
-              line-height: 32px !important;
-          }
-         ul, ol {
-             display: flex;
-             flex-wrap: wrap;
-             align-items: center;
-             color: #7D7D7D;
-             width: 90%;
-             height: 31px;
-             overflow: hidden;
-             span {
-                 margin: 3px 15px 3px 0;
-                 padding: 2px 5px;
-                 display: inline-block;
-                 cursor: pointer;
-             }
-         }
-         .active {
-             background: #000;
-             color: #fff;
-         }
-         .more{
-              position: absolute;
-              top: 15px;
-              right: 0;
-              cursor: pointer;
-              .icon-arrow{
-                  display: inline-block;
-                  width: 16px;
-                  height: 16px;
-              }
-              .arrow-top{
-                  background: url(../images/arrow_top.png) no-repeat 0 0;
-                  background-size: cover; 
-              }
-              .arrow-bottom{
-                  background: url(../images/arrow_bottom.png) no-repeat 0 0;
-                  background-size: cover; 
-              }
-         }
-      }
   }
-}
+
+  .Ingredients {
+    display: flex;
+
+    .meatType {
+      flex: 0 0 200px;
+
+      .title {
+        text-align: center;
+        font-size: 16px;
+        width: 164px;
+        height: 56px;
+        line-height: 56px;
+        background-color: #fff0d2;
+        border-radius: 4px;
+      }
+    }
+
+    .meatList {
+      .el-col {
+        cursor: pointer;
+        margin-bottom: 15px;
+      }
+
+      .grid-content {
+        img {
+          width: 56px;
+          height: 56px;
+        }
+
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
 }

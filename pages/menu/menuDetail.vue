@@ -2,7 +2,7 @@
     <div class="menu-container">
         <div class="">
             <!-- 内容 -->
-            我是菜谱内容
+            我是菜谱内容111111111111
         </div>
         <!-- 加载动效 -->
         <Loading v-if="showLoading"></Loading>
@@ -29,7 +29,7 @@ export default {
         },100)
     },
     mounted () {
-        
+        console.log(222222222222222);
     },
     methods: {
 
