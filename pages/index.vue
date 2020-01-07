@@ -1,16 +1,42 @@
 <template>
     <div class="index-container">
         <!-- banner轮播图 -->
-        <div class="swiper-container swiper-banner-box">
+        <div class="swiper-container">
             <div class="swiper-wrapper">
                 <!-- <a :href="bannerItem.link" target="_blank" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
-                <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a>
+                <!-- <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
+                <div class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{height:swiperHeight+'px'}">
+                    <img v-lazy="bannerItem.pic_url" alt="" class="" :style="{width: '100%', height:swiperHeight+'px'}">
+                </div>
             </div>
             <!-- 分页器导航 -->
             <div class="swiper-pagination"></div>
             <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+            <div class="swiper-button-next swiper-button-white"></div>
+        </div>
+
+        <!-- 菜谱 -->
+        <div>
+            <!-- <div>
+                <div>精选菜谱</div>
+                <div>查看更多<div class="right-arrow"></div></div>
+            </div> -->
+        </div>
+
+        <!-- 食材 -->
+        <div>
+
+        </div>
+
+        <!-- 哪里好吃 -->
+        <div>
+
+        </div>
+        
+        <!-- 资讯 -->
+        <div>
+
         </div>
         
         <!-- 加载动效 -->
@@ -73,18 +99,14 @@ export default {
         swiperInit () {
             let _this = this;
             var mySwiper = new Swiper('.swiper-container', {
-                // autoplay:true, // 自动切换
                 // loop : true, // 循环展示
                 speed:300,
-                // autoplay : {
-                //     delay:3000
-                // },
-                // 如果需要前进后退按钮
+                autoplay: 3000,
+                autoplayDisableOnInteraction: false,
                 nextButton: '.swiper-button-next',
                 prevButton: '.swiper-button-prev',
-                pagination: {
-                    el: '.swiper-pagination',
-                }
+                pagination: '.swiper-pagination',
+                paginationClickable: true
             });
             // 如果只有一个slide就销毁swiper
             if(mySwiper.slides.length<=1){
@@ -115,14 +137,5 @@ export default {
 </script>
 
 <style lang="scss">
-.swiper-banner-box{
-    width: 100%;
-    min-width: 1024px;
-    .swiper-button-prev{
-        left: 50px;
-    }
-    .swiper-button-next{
-        right: 50px;
-    }
-}
+
 </style>
