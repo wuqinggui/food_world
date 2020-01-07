@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <div id="nuxt-container">
-      <nuxt class="box-container p20"/>
+      <nuxt />
     </div>
     <Footer></Footer>
   </div>
@@ -29,13 +29,13 @@
     mounted () {
       // this.$nextTick(() => {
       //     //  根据窗口大小获取主内容的最小高度
-          var clientHeight = document.body.clientHeight;
-          var headerHeight = document.getElementById("header").clientHeight;
-          var footerHeight = document.getElementById("footer").clientHeight;
-          var nuxtHeight = clientHeight - headerHeight - footerHeight;
-          if (nuxtHeight > 0) {
-            document.getElementById("nuxt-container").style.minHeight = nuxtHeight + 'px';
-          }
+          // var clientHeight = document.body.clientHeight;
+          // var headerHeight = document.getElementById("header").clientHeight;
+          // var footerHeight = document.getElementById("footer").clientHeight;
+          // var nuxtHeight = clientHeight - headerHeight - footerHeight;
+          // if (nuxtHeight > 0) {
+          //   document.getElementById("nuxt-container").style.minHeight = nuxtHeight + 'px';
+          // }
 			// 	})
     },
     methods:{}
@@ -46,5 +46,8 @@
 #app{
     width: 100%;
     height: 100%;
+}
+#nuxt-container{
+  min-height: 300px;
 }
 </style>

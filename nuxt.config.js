@@ -12,7 +12,15 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // 轮播图插件
+      { rel: 'stylesheet', href: '/idangerous.swiper.css' },
+      { rel: 'stylesheet', href: '/swiper.min.css' }
+    ],
+    script:[
+      // 轮播图插件
+      {src:"/idangerous.swiper.min.js"},
+      {src:"/swiper.min.js"}
     ]
   },
   /*
