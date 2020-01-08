@@ -18,7 +18,7 @@
                     <i
                       @click="arrwTop(1)"
                       class="icon-arrow"
-                      :class="[isHeight1 ? 'arrow-top' : 'arrow-bottom']"
+                      :class="[isHeight1 ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"
                     ></i>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                     <i
                       @click="arrwTop(2)"
                       class="icon-arrow"
-                      :class="[isHeight2 ? 'arrow-top' : 'arrow-bottom']"
+                      :class="[isHeight2 ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"
                     ></i>
                   </div>
                 </div>
@@ -60,7 +60,7 @@
                     <i
                       @click="arrwTop(3)"
                       class="icon-arrow"
-                      :class="[isHeight3 ? 'arrow-top' : 'arrow-bottom']"
+                      :class="[isHeight3 ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"
                     ></i>
                   </div>
                 </div>
@@ -81,14 +81,14 @@
                     <i
                       @click="arrwTop(4)"
                       class="icon-arrow"
-                      :class="[isHeight4 ? 'arrow-top' : 'arrow-bottom']"
+                      :class="[isHeight4 ? 'el-icon-arrow-up' : 'el-icon-arrow-down']"
                     ></i>
                   </div>
                 </div>
               </div>
             </el-col>
           </el-row>
-          <a class="lookAll" @click="lookAll">查看全部 </a>
+          <a class="lookAll" @click="lookAll">查看全部 <i class="el-icon-arrow-right"></i></a>
           <div class="h2">
             <div class="title">精选</div>
           </div>

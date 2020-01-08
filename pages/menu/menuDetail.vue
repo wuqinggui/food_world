@@ -47,40 +47,38 @@
       </div>
     </div>
     <div class="right-content">
-        <div class="food-billboard">
-            <div class="title">Top美食榜</div>
+        <div class="food-billboard mb60">
+            <div class="title f16 mb20">Top美食榜</div>
             <div class="billboard-list">
-                <div class="billboard-item">
+                <div class="billboard-item mb10" v-for="(item, index) in billboards" :key="index">
                     <div class="desc-img">
-                        <img src="" alt="">
+                        <img v-lazy="item.url" alt="">
                     </div>
                     <div class="desc-good">
-                        <div class="name">奶白菜汤</div>
-                        <p>很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩</p>
-                        <div class="star-num"><span>10</span>人收藏</div>
+                        <div class="name f16 pb10 pt5">{{item.name}}</div>
+                        <p class="desc f14 pb20">{{item.desc}}</p>
+                        <div class="star-num"><span>{{item.start}}</span>人收藏</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="where">
-            <div class="title">哪里好吃</div>
+        <div class="where mb60">
+            <div class="title f16 mb20">哪里好吃</div>
             <div class="list">
-                <div class="list-item">
+                <div class="list-item mb20" v-for="(item, index) in yummy" :key="index">
                     <div class="img">
-                        <img src="" alt="">
+                        <img v-lazy="item.url" alt="">
                     </div>
-                    <p>北京路：惠福东路</p>
+                    <p class="address">{{item.address}}</p>
                 </div>
             </div>
         </div>
         <div class="news">
-            <div class="title">最新资讯</div>
+            <div class="title f16 mb20">最新资讯</div>
             <ul>
-                <li>酒后头痛，5种食物可缓解</li>
-                <li>酒后头痛，5种食物可缓解</li>
-                <li>酒后头痛，5种食物可缓解</li>
-                <li>酒后头痛，5种食物可缓解</li>
-                <li>酒后头痛，5种食物可缓解</li>
+                <li class="mb20" v-for="(item, index) in news" :key="index">
+                    {{item.name}}
+                </li>
             </ul>
         </div>
     </div>
@@ -117,7 +115,7 @@ export default {
         }],
         steps: [{
             url: require('@/assets/images/food-1.jpg'),
-            desc: '等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。'
+            desc: '等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。'
         },{
             url: require('@/assets/images/food-1.jpg'),
             desc: '等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。'
@@ -127,6 +125,70 @@ export default {
         },{
             url: require('@/assets/images/food-1.jpg'),
             desc: '等奶锅中水沸腾后放入北豆腐，大火焯水3分钟。'
+        }],
+        billboards: [{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        }],
+        yummy: [{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        },{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        },{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        },{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        },{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        },{
+            url: require('@/assets/images/food-2.jpg'),
+            address: '北京路：惠福东路美食一条街'
+        }],
+        news: [{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
+        },{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
+        },{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
+        },{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
+        },{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
+        },{
+            name: '酒后头痛，5种食物可缓解',
+            href: 'http://www.baidu.com'
         }]
     };
   },

@@ -67,16 +67,6 @@
             width: 16px;
             height: 16px;
           }
-
-          .arrow-top {
-            background: url(../images/arrow_top.png) no-repeat 0 0;
-            background-size: cover;
-          }
-
-          .arrow-bottom {
-            background: url(../images/arrow_bottom.png) no-repeat 0 0;
-            background-size: cover;
-          }
         }
       }
     }
@@ -87,6 +77,7 @@
       line-height: 50px;
       color: #5188a6;
     }
+
     .h2 {
       .title {
         padding-bottom: 20px;
@@ -101,11 +92,13 @@
       .el-col-6 {
         cursor: pointer;
         margin-bottom: 25px;
+
         .grid-content {
           .imgs {
             width: 100%;
             position: relative;
             overflow: hidden;
+
             .txt {
               color: #fff;
               position: absolute;
@@ -116,6 +109,7 @@
               bottom: 0;
               padding: 10px;
             }
+
             .img-bg {
               display: none;
               position: absolute;
@@ -131,14 +125,17 @@
               opacity: 0.5;
               cursor: pointer;
             }
+
             img {
               display: block;
               width: 100%;
               position: relative;
             }
-            
+
             &:hover {
-              .img-bg, .txt {
+
+              .img-bg,
+              .txt {
                 display: block !important;
               }
             }
@@ -147,7 +144,7 @@
       }
     }
   }
-  
+
 
   .type_classify {
 
@@ -213,65 +210,160 @@
 .menuDetail-container {
   display: flex;
   height: 100%;
+
   .left-content {
     flex: 0 0 690px;
     margin-right: 30px;
+
     .title {
       font-size: 18px;
       font-weight: bold;
     }
+
     .goods-img {
+      cursor: pointer;
       width: 100%;
       height: 460px;
       margin-bottom: 30px;
+
       img {
         width: 100%;
         height: 100%;
       }
     }
+
     .project {
-        .title {
-          font-size: 22px;
-          font-weight: bold;
-          padding: 15px 0;
-        }
-        .collect {
-          display: flex;
-          justify-content: space-between;
-          .num {              
-            span {
-              font-size: 24px;
-              color: $themeColor;
-            }
+      .title {
+        font-size: 22px;
+        font-weight: bold;
+        padding: 15px 0;
+      }
+
+      .collect {
+        display: flex;
+        justify-content: space-between;
+
+        .num {
+          span {
+            font-size: 24px;
+            color: $themeColor;
           }
-          .stars {
-            cursor: pointer;
-            color: #fff;
-            text-align: center;
-            width: 81px;
-            height: 34px;
-            line-height: 34px;
-            border-radius: 4px;
-            background-color: $themeColor;
-            span {
+        }
+
+        .stars {
+          cursor: pointer;
+          color: #fff;
+          text-align: center;
+          width: 81px;
+          height: 34px;
+          line-height: 34px;
+          border-radius: 4px;
+          background-color: $themeColor;
+
+          span {
             font-size: 15px;
-            }
           }
         }
+      }
     }
+
     .makes {
       .steps {
+        .step {
+          display: flex;
+
           img {
-            width: 220px;
+            width: 200px;
           }
+
           .explain {
             font-size: 15px;
             margin-left: 12px;
           }
+        }
       }
     }
   }
+
   .right-content {
     flex: 1;
+
+    .food-billboard {
+      .billboard-list {
+        display: flex;
+        flex-direction: column;
+
+        .billboard-item {
+          cursor: pointer;
+          display: flex;
+
+          .desc-img {
+            flex: 0 0 100px;
+            margin-right: 15px;
+
+            img {
+              width: 100%;
+            }
+          }
+
+          .desc-good {
+            .name {
+              font-weight: bold;
+            }
+
+            .desc {
+              width: 189px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            }
+
+            .star-num {
+              color: #999999;
+            }
+          }
+        }
+      }
+    }
+
+    .where {
+      .list {
+        overflow: hidden;
+
+        .list-item {
+          cursor: pointer;
+          width: 146px;
+          overflow: hidden;
+          float: left;
+
+          &:nth-child(even) {
+            float: right;
+          }
+
+          .address {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+
+          .img {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .news {
+      ul {
+        list-style: square;
+
+        li {
+          cursor: pointer;
+        }
+      }
+    }
   }
 }
