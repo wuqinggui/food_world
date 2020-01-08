@@ -1,12 +1,12 @@
 <template>
     <div class="index-container">
         <!-- banner轮播图 -->
-        <div class="swiper-container wow" data-wow-duration = '1s' data-wow-offset='10'>
+        <div class="swiper-container">
             <div class="swiper-wrapper">
                 <!-- <a :href="bannerItem.link" target="_blank" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
                 <!-- <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
                 <div class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{height:swiperHeight+'px'}">
-                    <img v-lazy="bannerItem.pic_url" alt="" class="transition-img" :style="{width: '100%', height:swiperHeight+'px'}">
+                    <img v-lazy="bannerItem.pic_url" alt="" class="img" :style="{height:swiperHeight+'px'}">
                 </div>
             </div>
             <!-- 分页器导航 -->
@@ -19,7 +19,7 @@
         <div class="box-container pt10 pb50">
             <!-- 菜谱 -->
             <div class="menu-box">
-                <div class="row mt20 mb20 wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <div class="row mt20 mb20">
                     <div class="flex-1 verticle-center">
                         <div class="fw f24 gray3 lh200">精选菜谱</div>
                         <div class="ml20 mr20">
@@ -33,12 +33,14 @@
                         <div class="right-arrow"></div>
                     </div>
                 </div>
-                <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <ul class="clearfix">
                     <li class="pull-left" v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
                         <div class="menu-menuItem mb20 is-click" :class="((menuIndex + 1)%4) > 0 ? 'menu-menuItem-mr' : ''" @click="goMenuDetail(menuItem)">
-                            <img v-lazy="menuItem.imgUrl" alt="" class="img radius4 transition-img">
-                            <div class="f14 gray3">{{menuItem.name}}</div>
-                            <div class="f14 gray3 menu-menuItem-description">{{menuItem.description}}</div>
+                            <div class="transition-show-bg">
+                                <img v-lazy="menuItem.imgUrl" alt="" class="img radius4">
+                                <div class="transition-bg">{{menuItem.description}}</div>
+                            </div>
+                            <div class="f14 gray3 p5">{{menuItem.name}}</div>
                         </div>
                     </li>
                 </ul>
@@ -46,7 +48,7 @@
 
             <!-- 食材 -->
             <div class="foods-box">
-                <div class="row mt20 mb20 wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <div class="row mt20 mb20">
                     <div class="flex-1 verticle-center">
                         <div class="fw f24 gray3 lh200">热门食材</div>
                     </div>
@@ -55,10 +57,10 @@
                         <div class="right-arrow"></div>
                     </div>
                 </div>
-                <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <ul class="clearfix">
                     <li class="pull-left" v-for="(foodItem, foodIndex) in foodList" :key="foodIndex">
                         <div class="foods-foodsItem mb25 is-click" :class="((foodIndex + 1)%7) > 0 ? '' : 'mr0'" @click="goFoodsDetail(foodItem)">
-                            <img v-lazy="foodItem.imgUrl" alt="" class="img radius4 transition-img">
+                            <img v-lazy="foodItem.imgUrl" alt="" class="img radius4 transition-big">
                             <div class="f14 gray3 text-center">{{foodItem.name}}</div>
                         </div>
                     </li>
@@ -67,7 +69,7 @@
 
             <!-- 哪里好吃 -->
             <div class="foraging-box">
-                <div class="row mt20 mb20 wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <div class="row mt20 mb20">
                     <div class="flex-1 verticle-center">
                         <div class="fw f24 gray3 lh200">哪里好吃</div>
                         <div class="ml20 mr20">
@@ -81,15 +83,15 @@
                         <div class="right-arrow"></div>
                     </div>
                 </div>
-                <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <ul class="clearfix">
                     <li class="pull-left" v-for="(foragingItem, foragingIndex) in foragingList" :key="foragingIndex">
                         <div class="foraging-foragingItem mb20 is-click radius4" :class="((foragingIndex + 1)%4) > 0 ? 'foraging-foragingItem-mr' : ''" @click="goForagingDetail(foragingItem)">
-                            <img v-lazy="foragingItem.imgUrl" alt="" class="img transition-img">
+                            <img v-lazy="foragingItem.imgUrl" alt="" class="img transition-big">
                             <div class="foraging-foragingItem-bottom pl10 pr10 pb5">
                                 <div class="f14 gray3 text-overflow ">{{foragingItem.title}}</div>
                                 <div class="row ju-b verticle-center lh200">
                                     <div class="f12 gray6">{{foragingItem.city_name}}</div>
-                                    <div class="">
+                                    <div>
                                         <i class="el-icon-star-on text-red" v-if="foragingItem.collect_state && foragingItem.collect_state == 1"></i>
                                         <i class="el-icon-star-off" v-else></i>
                                         <span class="f12 gray3">{{foragingItem.collect_num}}</span>
@@ -103,7 +105,7 @@
             
             <!-- 资讯 -->
             <div class="information-box">
-                <div class="row mt20 mb20 wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <div class="row mt20 mb20">
                     <div class="flex-1 verticle-center">
                         <div class="fw f24 gray3 lh200">精彩资讯</div>
                     </div>
@@ -112,14 +114,14 @@
                         <div class="right-arrow"></div>
                     </div>
                 </div>
-                <div class="row mb30 wow" data-wow-duration = '1s' data-wow-offset='10'>
-                    <img v-lazy="informationData.imgUrl" alt="" class="informationData-img transition-img">
+                <div class="row mb30 is-click" @click="goInformationDetail(informationData)">
+                    <img v-lazy="informationData.imgUrl" alt="" class="informationData-img transition-big">
                     <div class="flex-1 p15 column ju-b">
                         <div class="f16 gray3 lh150">{{informationData.title}}</div>
                         <div class="f12 gray9 lh200">{{informationData.date}}</div>
                     </div>
                 </div>
-                <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
+                <ul class="clearfix">
                     <li class="col-xs-6 is-click text-overflow f14 gray3 lh200 pl10 pt5 pb5 pr50" v-for="(informationItem, informationIndex) in informationList" :key="informationIndex" @click="goInformationDetail(informationItem)">
                         {{ ' · ' + informationItem.title}}
                     </li>
@@ -158,7 +160,6 @@ export default {
     created () {},
     mounted () {
         this.screenWidth =  document.body.scrollWidth;
-        this.swiperInit();
         this.getData();
         var _this = this;
         //  根据窗口大小获取屏幕宽度
@@ -170,28 +171,6 @@ export default {
         }
     },
     methods: {
-        // swiper初始化
-        swiperInit () {
-            let _this = this;
-            var mySwiper = new Swiper('.swiper-container', {
-                // loop : true, // 循环展示
-                speed:300,
-                autoplay: 3000,
-                autoplayDisableOnInteraction: false,
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                pagination: '.swiper-pagination',
-                paginationClickable: true
-            });
-            // 如果只有一个slide就销毁swiper
-            if(mySwiper.slides.length<=1){
-                mySwiper.destroy();
-            }
-        },
-        // 根据不同屏幕获取首页banner高度
-        getBannerHeight () {
-            this.swiperHeight = parseInt((360/1024)*(this.screenWidth));
-        },
         // 获取数据
         getData () {
             this.bannerList = [
@@ -404,9 +383,32 @@ export default {
                     title: '重磅丨智竞未来 · HFE五周年峰会庆典暨颁奖晚宴'
                 }
             ];
-            setTimeout(()=>{
-                this.showLoading = false;
-            },500)
+            this.showLoading = false;
+            this.$nextTick(()=>{
+                this.getBannerHeight();
+                this.swiperInit();
+            })
+        },
+        // swiper初始化
+        swiperInit () {
+            let _this = this;
+            var mySwiper = new Swiper('.swiper-container', {
+                speed:300,
+                autoplay: 3000,
+                autoplayDisableOnInteraction: false,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                pagination: '.swiper-pagination',
+                paginationClickable: true
+            });
+            // 如果只有一个slide就销毁swiper
+            if(mySwiper.slides.length<=1){
+                mySwiper.destroy();
+            }
+        },
+        // 根据不同屏幕获取首页banner高度
+        getBannerHeight () {
+            this.swiperHeight = parseInt((360/1024)*(this.screenWidth));
         },
         // 菜谱
         goMenu () {

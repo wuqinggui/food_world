@@ -29,16 +29,6 @@
 	.menu-box{
 		.menu-menuItem{
 			width: 200px;
-            &:hover {
-              .menu-menuItem-description {
-                display: block !important;
-              }
-            }
-			.menu-menuItem-description{
-                // display: none;
-                width: 100%;
-                height: 100%;
-            }
 		}
 		.menu-menuItem-mr{
 			margin-right: 74px;
