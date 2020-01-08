@@ -143,7 +143,7 @@ export default {
     data () {
         return {
             // 全屏加载
-            showLoading:true,
+            showLoading:false,
             screenWidth:'', //屏幕宽度,默认值,一定要
             swiperHeight: '',
             bannerList: [],
@@ -161,6 +161,7 @@ export default {
     },
     created () {},
     mounted () {
+        this.showLoading = true;
         this.screenWidth =  document.body.scrollWidth;
         this.getBannerHeight();
         this.getData();
