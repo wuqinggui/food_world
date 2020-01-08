@@ -95,7 +95,7 @@
           <div class="boutiqueList">
             <el-row :gutter="60">
               <el-col :span="6" v-for="(item, index) in foodObj" :key="index">
-                <div class="grid-content bg-purple" @click="goBoutique">
+                <div class="grid-content bg-purple wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" @click="goBoutique">
                   <div class="imgs">
                       <img v-lazy="item.url" alt="" />
                       <div class="img-bg"></div>
@@ -112,7 +112,7 @@
       </el-tab-pane>
       <el-tab-pane label="分类" name="second">
         <div class="type_classify">
-            <div class="h2" v-for="(item, index) in classifyList" :key="index">
+            <div class="h2 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in classifyList" :key="index">
                 <div class="title">{{ item.title }}</div>
                 <div class="classify">
                     <span v-for="(item2, index2) in item.list" :key="index2">{{

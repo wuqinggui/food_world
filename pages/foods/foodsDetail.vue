@@ -1,7 +1,7 @@
 <template>
-    <div class="foodsDetail-container box-container mt20">
+    <div class="wow foodsDetail-container box-container mt20">
         <div class="foods-list">
-            <div class="foods-item mb30" v-for="(item, index) in foods" :key="index">
+            <div class="foods-item mb30 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in foods" :key="index">
                 <div class="desc-img">
                     <img v-lazy="item.url" alt="">
                 </div>
@@ -14,8 +14,46 @@
         </div>
         <div class="classifiy">
             <el-tabs type="border-card">
-                <el-tab-pane label="最新">最新</el-tab-pane>
-                <el-tab-pane label="收藏最多">收藏最多</el-tab-pane>
+                <el-tab-pane label="最新">
+                    <div class="billboard-list">
+                        <div class="billboard-item mb10 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in billboards" :key="index">
+                            <div class="desc-img">
+                                <img v-lazy="item.url" alt="">
+                            </div>
+                            <div class="desc-good">
+                                <div class="name f18 pb10 pt5">{{item.name}}11111</div>
+                                <p class="desc f14 mb20">{{item.desc}}</p>
+                                <div class="star-num"><span>{{item.start}}</span>人收藏</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination" data-wow-duration="1s" data-wow-offset="10">
+                        <el-pagination
+                            layout="prev, pager, next"
+                            :total="100">
+                        </el-pagination>
+                    </div>
+                </el-tab-pane>
+                <el-tab-pane label="收藏最多">
+                    <div class="billboard-list">
+                        <div class="billboard-item mb10 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in billboards" :key="index">
+                            <div class="desc-img">
+                                <img v-lazy="item.url" alt="">
+                            </div>
+                            <div class="desc-good">
+                                <div class="name f18 pb10 pt5">{{item.name}}222222</div>
+                                <p class="desc f14 mb20">{{item.desc}}</p>
+                                <div class="star-num"><span>{{item.start}}</span>人收藏</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+                        <el-pagination
+                            layout="prev, pager, next"
+                            :total="50">
+                        </el-pagination>
+                    </div>
+                </el-tab-pane>
             </el-tabs>
         </div>
         <!-- 加载动效 -->
@@ -35,6 +73,33 @@ export default {
             url: require('@/assets/images/food-1.jpg'),
             name: '奶白菜汤',
             desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        }],
+        
+        billboards: [{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
+            start: 120 
+        },{
+            url: require('@/assets/images/food-1.jpg'),
+            name: '奶白菜汤',
+            desc: '很多家长喜欢把比较嫩很多家长喜欢把比较嫩很多家长喜欢把比较嫩',
             start: 120 
         },{
             url: require('@/assets/images/food-1.jpg'),

@@ -76,22 +76,74 @@
     .el-tabs--border-card {
       border: none;
       box-shadow: none;
+      .pagination {
+        text-align: center;
+        .el-pager li.active {
+          width: 28px;
+          height: 28px;
+          line-height: 28px;
+          font-weight: bold;
+          color: #000;
+          background-color: $themeColor;
+          border-radius: 50%;
+        }
+      }
       .el-tabs__header {
         background: none !important;
         border: none;
         .el-tabs__item.is-active {    
-          border: none;
+          border-right: none;
           color: #333333;
           font-size: 14px;
           font-weight: bold;
         }
         .el-tabs__item {
           transition: none;
-          &:first-child {
+          &:nth-child(1) {
             border-right: 1px solid #DCDFE6;
+          }
+          &:nth-child(1) {
+            border-left: 1px solid #DCDFE6;
           }
           &:hover {
             color: #333333;
+          }
+        }
+      }
+    }
+    
+    .billboard-list {
+      display: flex;
+      flex-direction: column;
+
+      .billboard-item {
+        cursor: pointer;
+        display: flex;
+
+        .desc-img {
+          flex: 0 0 180px;
+          margin-right: 15px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .desc-good {
+          .name {
+            font-weight: bold;
+          }
+
+          .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display:-webkit-box; //作为弹性伸缩盒子模型显示。
+            -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
+            -webkit-line-clamp:5; //显示的行
+          }
+
+          .star-num {
+            color: #999999;
           }
         }
       }

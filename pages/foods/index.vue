@@ -1,6 +1,6 @@
 <template>
     <div class="foods-container box-container mt50 mb100">
-        <div class="Ingredients"
+        <div class="Ingredients wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10"
           v-for="(item, index) in Ingredients"
           :key="index"
         >
