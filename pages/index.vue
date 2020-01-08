@@ -1,131 +1,133 @@
 <template>
     <div class="index-container">
-        <!-- banner轮播图 -->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <!-- <a :href="bannerItem.link" target="_blank" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
-                <!-- <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
-                <div class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{height:swiperHeight+'px'}">
-                    <img v-lazy="bannerItem.pic_url" alt="" class="img" :style="{height:swiperHeight+'px'}">
+        <div v-if="!showLoading">
+            <!-- banner轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- <a :href="bannerItem.link" target="_blank" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
+                    <!-- <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
+                    <div class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{height:swiperHeight+'px'}">
+                        <img v-lazy="bannerItem.pic_url" alt="" class="img" :style="{height:swiperHeight+'px'}">
+                    </div>
                 </div>
+                <!-- 分页器导航 -->
+                <div class="swiper-pagination"></div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev swiper-button-white"></div>
+                <div class="swiper-button-next swiper-button-white"></div>
             </div>
-            <!-- 分页器导航 -->
-            <div class="swiper-pagination"></div>
-            <!-- 如果需要导航按钮 -->
-            <div class="swiper-button-prev swiper-button-white"></div>
-            <div class="swiper-button-next swiper-button-white"></div>
-        </div>
 
-        <div class="box-container pt10 pb50">
-            <!-- 菜谱 -->
-            <div class="menu-box">
-                <div class="row mt20 mb20">
-                    <div class="flex-1 verticle-center">
-                        <div class="fw f24 gray3 lh200">精选菜谱</div>
-                        <div class="ml20 mr20">
-                            <span class="radius20 f14 gray3 bg-grayf4 pt5 pb5 pl15 pr15 is-click mr10 ml10" @click="goMenuDetail(menuTabItem)" v-for="(menuTabItem, menuTabIndex) in menuTabList" :key="menuTabIndex">
-                                {{menuTabItem.name}}
-                            </span>
-                        </div>
-                    </div>
-                    <div class="is-click gray6 verticle-center" @click="goMenu">
-                        <div class="f14">查看更多</div>
-                        <div class="right-arrow"></div>
-                    </div>
-                </div>
-                <ul class="clearfix">
-                    <li class="pull-left" v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
-                        <div class="menu-menuItem mb20 is-click" :class="((menuIndex + 1)%4) > 0 ? 'menu-menuItem-mr' : ''" @click="goMenuDetail(menuItem)">
-                            <div class="transition-show-bg">
-                                <img v-lazy="menuItem.imgUrl" alt="" class="img radius4">
-                                <div class="transition-bg">{{menuItem.description}}</div>
+            <div class="box-container pt10 pb50">
+                <!-- 菜谱 -->
+                <div class="menu-box">
+                    <div class="row mt20 mb20">
+                        <div class="flex-1 verticle-center">
+                            <div class="fw f24 gray3 lh200">精选菜谱</div>
+                            <div class="ml20 mr20">
+                                <span class="radius20 f14 gray3 bg-grayf4 pt5 pb5 pl15 pr15 is-click mr10 ml10" @click="goMenuDetail(menuTabItem)" v-for="(menuTabItem, menuTabIndex) in menuTabList" :key="menuTabIndex">
+                                    {{menuTabItem.name}}
+                                </span>
                             </div>
-                            <div class="f14 gray3 p5">{{menuItem.name}}</div>
                         </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- 食材 -->
-            <div class="foods-box">
-                <div class="row mt20 mb20">
-                    <div class="flex-1 verticle-center">
-                        <div class="fw f24 gray3 lh200">热门食材</div>
+                        <div class="is-click gray6 verticle-center" @click="goMenu">
+                            <div class="f14">查看更多</div>
+                            <div class="right-arrow"></div>
+                        </div>
                     </div>
-                    <div class="is-click gray6 verticle-center" @click="goFoods">
-                        <div class="f14">查看更多</div>
-                        <div class="right-arrow"></div>
-                    </div>
+                    <ul class="clearfix">
+                        <li class="pull-left" v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
+                            <div class="menu-menuItem mb20 is-click" :class="((menuIndex + 1)%4) > 0 ? 'menu-menuItem-mr' : ''" @click="goMenuDetail(menuItem)">
+                                <div class="transition-show-bg">
+                                    <img v-lazy="menuItem.imgUrl" alt="" class="img radius4">
+                                    <div class="transition-bg">{{menuItem.description}}</div>
+                                </div>
+                                <div class="f14 gray3 p5">{{menuItem.name}}</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="clearfix">
-                    <li class="pull-left" v-for="(foodItem, foodIndex) in foodList" :key="foodIndex">
-                        <div class="foods-foodsItem mb25 is-click" :class="((foodIndex + 1)%7) > 0 ? '' : 'mr0'" @click="goFoodsDetail(foodItem)">
-                            <img v-lazy="foodItem.imgUrl" alt="" class="img radius4 transition-big">
-                            <div class="f14 gray3 text-center">{{foodItem.name}}</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
 
-            <!-- 哪里好吃 -->
-            <div class="foraging-box">
-                <div class="row mt20 mb20">
-                    <div class="flex-1 verticle-center">
-                        <div class="fw f24 gray3 lh200">哪里好吃</div>
-                        <div class="ml20 mr20">
-                            <span class="radius20 f14 gray3 bg-grayf4 pt5 pb5 pl15 pr15 is-click mr10 ml10" @click="goForaging" v-for="(foragingTabItem, foragingTabIndex) in foragingTabList" :key="foragingTabIndex">
-                                {{foragingTabItem.city_name}}
-                            </span>
+                <!-- 食材 -->
+                <div class="foods-box">
+                    <div class="row mt20 mb20">
+                        <div class="flex-1 verticle-center">
+                            <div class="fw f24 gray3 lh200">热门食材</div>
+                        </div>
+                        <div class="is-click gray6 verticle-center" @click="goFoods">
+                            <div class="f14">查看更多</div>
+                            <div class="right-arrow"></div>
                         </div>
                     </div>
-                    <div class="is-click gray6 verticle-center" @click="goForaging">
-                        <div class="f14">查看更多</div>
-                        <div class="right-arrow"></div>
-                    </div>
+                    <ul class="clearfix">
+                        <li class="pull-left" v-for="(foodItem, foodIndex) in foodList" :key="foodIndex">
+                            <div class="foods-foodsItem mb25 is-click" :class="((foodIndex + 1)%7) > 0 ? '' : 'mr0'" @click="goFoodsDetail(foodItem)">
+                                <img v-lazy="foodItem.imgUrl" alt="" class="img radius4 transition-big">
+                                <div class="f14 gray3 text-center">{{foodItem.name}}</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="clearfix">
-                    <li class="pull-left" v-for="(foragingItem, foragingIndex) in foragingList" :key="foragingIndex">
-                        <div class="foraging-foragingItem mb20 is-click radius4" :class="((foragingIndex + 1)%4) > 0 ? 'foraging-foragingItem-mr' : ''" @click="goForagingDetail(foragingItem)">
-                            <img v-lazy="foragingItem.imgUrl" alt="" class="img transition-big">
-                            <div class="foraging-foragingItem-bottom pl10 pr10 pb5">
-                                <div class="f14 gray3 text-overflow ">{{foragingItem.title}}</div>
-                                <div class="row ju-b verticle-center lh200">
-                                    <div class="f12 gray6">{{foragingItem.city_name}}</div>
-                                    <div>
-                                        <i class="el-icon-star-on text-red" v-if="foragingItem.collect_state && foragingItem.collect_state == 1"></i>
-                                        <i class="el-icon-star-off" v-else></i>
-                                        <span class="f12 gray3">{{foragingItem.collect_num}}</span>
+
+                <!-- 哪里好吃 -->
+                <div class="foraging-box">
+                    <div class="row mt20 mb20">
+                        <div class="flex-1 verticle-center">
+                            <div class="fw f24 gray3 lh200">哪里好吃</div>
+                            <div class="ml20 mr20">
+                                <span class="radius20 f14 gray3 bg-grayf4 pt5 pb5 pl15 pr15 is-click mr10 ml10" @click="goForaging" v-for="(foragingTabItem, foragingTabIndex) in foragingTabList" :key="foragingTabIndex">
+                                    {{foragingTabItem.city_name}}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="is-click gray6 verticle-center" @click="goForaging">
+                            <div class="f14">查看更多</div>
+                            <div class="right-arrow"></div>
+                        </div>
+                    </div>
+                    <ul class="clearfix">
+                        <li class="pull-left" v-for="(foragingItem, foragingIndex) in foragingList" :key="foragingIndex">
+                            <div class="foraging-foragingItem mb20 is-click radius4" :class="((foragingIndex + 1)%4) > 0 ? 'foraging-foragingItem-mr' : ''" @click="goForagingDetail(foragingItem)">
+                                <img v-lazy="foragingItem.imgUrl" alt="" class="img transition-big">
+                                <div class="foraging-foragingItem-bottom pl10 pr10 pb5">
+                                    <div class="f14 gray3 text-overflow ">{{foragingItem.title}}</div>
+                                    <div class="row ju-b verticle-center lh200">
+                                        <div class="f12 gray6">{{foragingItem.city_name}}</div>
+                                        <div>
+                                            <i class="el-icon-star-on text-red" v-if="foragingItem.collect_state && foragingItem.collect_state == 1"></i>
+                                            <i class="el-icon-star-off" v-else></i>
+                                            <span class="f12 gray3">{{foragingItem.collect_num}}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 资讯 -->
+                <div class="information-box">
+                    <div class="row mt20 mb20">
+                        <div class="flex-1 verticle-center">
+                            <div class="fw f24 gray3 lh200">精彩资讯</div>
                         </div>
-                    </li>
-                </ul>
-            </div>
-            
-            <!-- 资讯 -->
-            <div class="information-box">
-                <div class="row mt20 mb20">
-                    <div class="flex-1 verticle-center">
-                        <div class="fw f24 gray3 lh200">精彩资讯</div>
+                        <div class="is-click gray6 verticle-center" @click="goInformation">
+                            <div class="f14">查看更多</div>
+                            <div class="right-arrow"></div>
+                        </div>
                     </div>
-                    <div class="is-click gray6 verticle-center" @click="goInformation">
-                        <div class="f14">查看更多</div>
-                        <div class="right-arrow"></div>
+                    <div class="row mb30 is-click" @click="goInformationDetail(informationData)">
+                        <img v-lazy="informationData.imgUrl" alt="" class="informationData-img transition-big">
+                        <div class="flex-1 p15 column ju-b">
+                            <div class="f16 gray3 lh150">{{informationData.title}}</div>
+                            <div class="f12 gray9 lh200">{{informationData.date}}</div>
+                        </div>
                     </div>
+                    <ul class="clearfix">
+                        <li class="col-xs-6 is-click text-overflow f14 gray3 lh200 pl10 pt5 pb5 pr50" v-for="(informationItem, informationIndex) in informationList" :key="informationIndex" @click="goInformationDetail(informationItem)">
+                            {{ ' · ' + informationItem.title}}
+                        </li>
+                    </ul>
                 </div>
-                <div class="row mb30 is-click" @click="goInformationDetail(informationData)">
-                    <img v-lazy="informationData.imgUrl" alt="" class="informationData-img transition-big">
-                    <div class="flex-1 p15 column ju-b">
-                        <div class="f16 gray3 lh150">{{informationData.title}}</div>
-                        <div class="f12 gray9 lh200">{{informationData.date}}</div>
-                    </div>
-                </div>
-                <ul class="clearfix">
-                    <li class="col-xs-6 is-click text-overflow f14 gray3 lh200 pl10 pt5 pb5 pr50" v-for="(informationItem, informationIndex) in informationList" :key="informationIndex" @click="goInformationDetail(informationItem)">
-                        {{ ' · ' + informationItem.title}}
-                    </li>
-                </ul>
             </div>
         </div>
 
@@ -160,6 +162,7 @@ export default {
     created () {},
     mounted () {
         this.screenWidth =  document.body.scrollWidth;
+        this.getBannerHeight();
         this.getData();
         var _this = this;
         //  根据窗口大小获取屏幕宽度
@@ -384,9 +387,9 @@ export default {
                 }
             ];
             this.showLoading = false;
+            var _this = this;
             this.$nextTick(()=>{
-                this.getBannerHeight();
-                this.swiperInit();
+                _this.swiperInit();
             })
         },
         // swiper初始化
@@ -401,14 +404,10 @@ export default {
                 pagination: '.swiper-pagination',
                 paginationClickable: true
             });
-            // 如果只有一个slide就销毁swiper
-            if(mySwiper.slides.length<=1){
-                mySwiper.destroy();
-            }
         },
         // 根据不同屏幕获取首页banner高度
         getBannerHeight () {
-            this.swiperHeight = parseInt((360/1024)*(this.screenWidth));
+            this.swiperHeight = parseInt((320/1024)*(this.screenWidth));
         },
         // 菜谱
         goMenu () {

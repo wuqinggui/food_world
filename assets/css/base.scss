@@ -1194,6 +1194,31 @@ input:-moz-placeholder {
 	cursor: pointer;
 }
 
+// 滚动条样式
+body,
+.el-table__body-wrapper {
+    /*垂直滚动条的宽*/
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+    /*修改滚动条的背景和圆角*/
+    &::-webkit-scrollbar-track-piece {
+        background: #fff;
+        border-radius: 2px;
+    }
+    /*修改垂直滚动条的样式*/
+    &::-webkit-scrollbar-thumb:vertical {
+        background-color: #c0bebe;
+        border-radius: 2px;
+    }
+    /*修改水平滚动条的样式*/
+    &::-webkit-scrollbar-thumb:horizontal {
+        background-color: #c0bebe;
+        border-radius: 2px;
+    }
+}
+
 /*上箭头*/
 .top-arrow {
 	display :inline-block;
