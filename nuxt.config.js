@@ -15,12 +15,16 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       // 轮播图插件
       { rel: 'stylesheet', href: '/idangerous.swiper.css' },
-      { rel: 'stylesheet', href: '/swiper.min.css' }
+      { rel: 'stylesheet', href: '/swiper.min.css' },
+      // 整体页面滚动特效
+      { rel: 'stylesheet', href: '/animate.min.css' }
     ],
     script:[
       // 轮播图插件
       {src:"/idangerous.swiper.min.js"},
-      {src:"/swiper.min.js"}
+      {src:"/swiper.min.js"},
+      // 整体页面滚动特效
+      {src:"/wow.min.js"}
     ]
   },
   /*

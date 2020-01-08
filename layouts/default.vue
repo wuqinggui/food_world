@@ -27,16 +27,7 @@
     },
     created(){},
     mounted () {
-      // this.$nextTick(() => {
-      //     //  根据窗口大小获取主内容的最小高度
-          // var clientHeight = document.body.clientHeight;
-          // var headerHeight = document.getElementById("header").clientHeight;
-          // var footerHeight = document.getElementById("footer").clientHeight;
-          // var nuxtHeight = clientHeight - headerHeight - footerHeight;
-          // if (nuxtHeight > 0) {
-          //   document.getElementById("nuxt-container").style.minHeight = nuxtHeight + 'px';
-          // }
-			// 	})
+      new WOW().init();
     },
     methods:{}
   }

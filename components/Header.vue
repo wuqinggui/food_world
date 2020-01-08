@@ -2,13 +2,13 @@
     <div id="header">
         <div class="box-container header-container row verticle-center pl5 pr5">
             <div class="flex-1 verticle-center">
-                <div class="header-logo pull-left">
+                <div class="header-logo">
                     <img :src="logoUrl" alt="">
                 </div>
-                <el-menu :default-active="curIndex.toString()" class="el-menu-demo pull-left ml20 mr20" mode="horizontal" @select="handleSelect">
+                <el-menu :default-active="curIndex.toString()" class="el-menu-demo ml20 mr20" mode="horizontal" @select="handleSelect">
                     <el-menu-item :index="index.toString()" v-for="(item, index) in menuList" :key="index">{{item.name}}</el-menu-item>
                 </el-menu>
-                <div class="header-search pull-left">
+                <div class="header-search">
                     <el-input placeholder="搜索菜谱、食材、哪里好吃的" v-model="searchValue" clearable style="width:240px;"></el-input>
                     <el-button type="primary" @click="handleSearch">搜索</el-button>
                 </div>
@@ -31,7 +31,7 @@ export default {
         return {
             logoUrl:require('@/assets/images/food-world-logo.jpg'),
             searchValue: '',
-            curIndex: 0, // 选中的索引
+            curIndex: -1, // 选中的索引
             menuList: [
                 {
                     name: '首页',

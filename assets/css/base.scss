@@ -88,6 +88,25 @@ input:-moz-placeholder {
 	-webkit-border-radius: 50%;
 }
 
+.radius2{
+	border-radius: 2px !important;
+}
+
+.radius4{
+	border-radius: 4px !important;
+}
+
+.radius8{
+	border-radius: 8px !important;
+}
+
+.radius10{
+	border-radius: 10px !important;
+}
+
+.radius20{
+	border-radius: 20px !important;
+}
 
 .col-xs-1,
 .col-xs-2,
@@ -1169,6 +1188,10 @@ input:-moz-placeholder {
 .box-container{
 	width: 1024px;
 	margin: 0 auto;
+}
+
+.is-click{
+	cursor: pointer;
 }
 
 /*上箭头*/
