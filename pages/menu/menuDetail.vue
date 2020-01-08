@@ -1,10 +1,10 @@
 <template>
-  <div class="menuDetail-container box-container mt20" data-wow-duration="1s" data-wow-offset="10">
+  <div class="menuDetail-container box-container mt20">
     <div class="left-content">
       <div class="goods-img">
-        <img v-lazy="goodsImg" alt="" />
+        <img v-lazy="goodsImg" alt=""  class="radius4 transition-big" />
       </div>
-      <div class="project mb50 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+      <div class="project mb50">
         <div class="title">风桂花蛋糕</div>
         <div class="collect mb20">
           <div class="num"><span>7745</span> 收藏</div>
@@ -16,7 +16,7 @@
             今天的这款奶白菜汤你们一定要试试，汤汁浓郁又特别入味
         </div>
       </div>
-      <div class="material mb50 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+      <div class="material mb50">
         <div class="title mb20">奶白菜汤的用料</div>
         <el-table :data="tableData" border style="width: 100%">
           <el-table-column prop="date" label="日期" width="180">
@@ -26,11 +26,11 @@
           <el-table-column prop="address" label="地址"> </el-table-column>
         </el-table>
       </div>
-      <div class="makes mb50 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+      <div class="makes mb50">
           <div class="title mb20">奶白菜汤的做法</div>
           <div class="steps">
               <div class="step mb40" v-for="(item, index) in steps" :key="index">
-                  <img v-lazy="item.url" alt="">
+                  <img v-lazy="item.url" alt="" class="radius4 transition-big">
                   <div class="explain">
                       <p class="mb10">步骤{{index+1}}</p>
                       <p>{{item.desc}}</p>
@@ -38,7 +38,7 @@
               </div>
           </div>
       </div>
-      <div class="skill mb100 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+      <div class="skill mb100">
           <div class="title mb20">奶白菜汤的烹饪技巧</div>
           <div class="desc">由于加了面粉，要注意汤汁的浓稠程度，煮太久会导致汤汁变浓稠影响口感。 ●妈妈们尽量一次性
             把水加足，二次加水容易影响口感。 ●平时咱们在家煮其他菜汤的时候，也可以用加面粉的方法，汤汁浓
@@ -47,12 +47,12 @@
       </div>
     </div>
     <div class="right-content">
-        <div class="food-billboard mb60 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+        <div class="food-billboard mb60">
             <div class="title f16 mb20">Top美食榜</div>
             <div class="billboard-list">
                 <div class="billboard-item mb10" v-for="(item, index) in billboards" :key="index">
                     <div class="desc-img">
-                        <img v-lazy="item.url" alt="">
+                        <img v-lazy="item.url" alt="" class="radius4 transition-big">
                     </div>
                     <div class="desc-good">
                         <div class="name f16 pb10 pt5">{{item.name}}</div>
@@ -62,18 +62,18 @@
                 </div>
             </div>
         </div>
-        <div class="where mb60 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+        <div class="where mb60">
             <div class="title f16 mb20">哪里好吃</div>
             <div class="list">
                 <div class="list-item mb20" v-for="(item, index) in yummy" :key="index">
                     <div class="img">
-                        <img v-lazy="item.url" alt="">
+                        <img v-lazy="item.url" alt="" class="radius4 transition-big">
                     </div>
                     <p class="address">{{item.address}}</p>
                 </div>
             </div>
         </div>
-        <div class="news wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+        <div class="news">
             <div class="title f16 mb20">最新资讯</div>
             <ul>
                 <li class="mb20" v-for="(item, index) in news" :key="index">

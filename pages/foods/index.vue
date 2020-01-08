@@ -1,6 +1,6 @@
 <template>
     <div class="foods-container box-container mt50 mb100">
-        <div class="Ingredients wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10"
+        <div class="Ingredients"
           v-for="(item, index) in Ingredients"
           :key="index"
         >
@@ -15,7 +15,7 @@
                 :key="index2"
               >
                 <div class="grid-content bg-purple" @click="goIngredients">
-                  <img v-lazy="item2.url" alt="" />
+                  <img v-lazy="item2.url" alt="" class="radius4 transition-big" />
                   <p>{{ item2.name }}</p>
                 </div>
               </el-col>

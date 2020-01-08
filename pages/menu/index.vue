@@ -95,13 +95,12 @@
           <div class="boutiqueList">
             <el-row :gutter="60">
               <el-col :span="6" v-for="(item, index) in foodObj" :key="index">
-                <div class="grid-content bg-purple wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" @click="goBoutique">
-                  <div class="imgs">
+                <div class="grid-content bg-purple" @click="goBoutique">
+                  <div class="imgs transition-show-bg">
                       <img v-lazy="item.url" alt="" />
-                      <div class="img-bg"></div>
-                        <div class="txt">
+                      <div class="transition-bg">
                           <p>这个菜好评这个菜好评这个菜好评这个菜好评</p>
-                        </div>
+                       </div>
                   </div>
                   <p>{{ item.name }}</p>
                 </div>
@@ -112,7 +111,7 @@
       </el-tab-pane>
       <el-tab-pane label="分类" name="second">
         <div class="type_classify">
-            <div class="h2 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in classifyList" :key="index">
+            <div class="h2" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in classifyList" :key="index">
                 <div class="title">{{ item.title }}</div>
                 <div class="classify">
                     <span v-for="(item2, index2) in item.list" :key="index2">{{
@@ -368,6 +367,7 @@ export default {
     },
     // 菜谱详情
     goBoutique () {
+      console.log(1111);
         this.$router.push({
                 path: '/menu/menuDetail',
             });

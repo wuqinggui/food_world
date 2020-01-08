@@ -1,9 +1,9 @@
 <template>
-    <div class="wow foodsDetail-container box-container mt20">
+    <div class="foodsDetail-container box-container mt20">
         <div class="foods-list">
-            <div class="foods-item mb30 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in foods" :key="index">
+            <div class="foods-item mb30" v-for="(item, index) in foods" :key="index">
                 <div class="desc-img">
-                    <img v-lazy="item.url" alt="">
+                    <img v-lazy="item.url" alt="" class="transition-big">
                 </div>
                 <div class="desc-good">
                     <div class="name f20 pb5 pt5">{{item.name}}</div>
@@ -16,9 +16,9 @@
             <el-tabs type="border-card">
                 <el-tab-pane label="最新">
                     <div class="billboard-list">
-                        <div class="billboard-item mb10 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in billboards" :key="index">
+                        <div class="billboard-item mb10" v-for="(item, index) in billboards" :key="index">
                             <div class="desc-img">
-                                <img v-lazy="item.url" alt="">
+                                <img v-lazy="item.url" alt="" class="transition-big">
                             </div>
                             <div class="desc-good">
                                 <div class="name f18 pb10 pt5">{{item.name}}11111</div>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pagination" data-wow-duration="1s" data-wow-offset="10">
+                    <div class="pagination">
                         <el-pagination
                             layout="prev, pager, next"
                             :total="100">
@@ -36,9 +36,9 @@
                 </el-tab-pane>
                 <el-tab-pane label="收藏最多">
                     <div class="billboard-list">
-                        <div class="billboard-item mb10 wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10" v-for="(item, index) in billboards" :key="index">
+                        <div class="billboard-item mb10" v-for="(item, index) in billboards" :key="index">
                             <div class="desc-img">
-                                <img v-lazy="item.url" alt="">
+                                <img v-lazy="item.url" alt="" class="transition-big">
                             </div>
                             <div class="desc-good">
                                 <div class="name f18 pb10 pt5">{{item.name}}222222</div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="pagination wow slideInUp animated" data-wow-duration="1s" data-wow-offset="10">
+                    <div class="pagination">
                         <el-pagination
                             layout="prev, pager, next"
                             :total="50">
