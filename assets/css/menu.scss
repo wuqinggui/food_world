@@ -170,41 +170,7 @@
     }
   }
 
-  .Ingredients {
-    display: flex;
-
-    .meatType {
-      flex: 0 0 200px;
-
-      .title {
-        text-align: center;
-        font-size: 16px;
-        width: 164px;
-        height: 56px;
-        line-height: 56px;
-        background-color: #fff0d2;
-        border-radius: 4px;
-      }
-    }
-
-    .meatList {
-      .el-col {
-        cursor: pointer;
-        margin-bottom: 15px;
-      }
-
-      .grid-content {
-        img {
-          width: 56px;
-          height: 56px;
-        }
-
-        p {
-          text-align: center;
-        }
-      }
-    }
-  }
+  
 }
 
 .menuDetail-container {

@@ -122,31 +122,6 @@
             </div>
         </div>
       </el-tab-pane>
-      <el-tab-pane label="食材" name="third">
-        <div
-          class="Ingredients"
-          v-for="(item, index) in Ingredients"
-          :key="index"
-        >
-          <div class="meatType">
-            <div class="title">{{ item.title }}</div>
-          </div>
-          <div class="meatList">
-            <el-row :gutter="20">
-              <el-col
-                :span="2"
-                v-for="(item2, index2) in item.list"
-                :key="index2"
-              >
-                <div class="grid-content bg-purple" @click="goBoutique">
-                  <img v-lazy="item2.url" alt="" />
-                  <p>{{ item2.name }}</p>
-                </div>
-              </el-col>
-            </el-row>
-          </div>
-        </div>
-      </el-tab-pane>
     </el-tabs>
     <!-- 加载动效 -->
     <Loading v-if="showLoading"></Loading>
@@ -155,6 +130,7 @@
 
 <script>
 import Loading from "@/components/Loading";
+import util from '@/util/util';
 export default {
   name: "menus",
   data() {
@@ -166,6 +142,7 @@ export default {
       isHeight2: false,
       isHeight3: false,
       isHeight4: false,
+      isDetail: false, //是否食材详情页
       foodList: ["家常菜", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭", "粤菜", "湘菜", "湖南菜", "川菜", "北京烤鸭"],
       foodObj: [
         {
@@ -358,236 +335,6 @@ export default {
             "辣条"
           ]
         }
-      ],
-      Ingredients: [
-        {
-          title: "猪肉类",
-          list: [
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "猪杂",
-              url: require("@/assets/images/rou.jpg")
-            }
-          ]
-        },
-        {
-          title: "牛肉类",
-          list: [
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            }
-          ]
-        },
-        {
-          title: "牛肉类",
-          list: [
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            }
-          ]
-        },
-        {
-          title: "牛肉类",
-          list: [
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            },
-            {
-              name: "牛杂",
-              url: require("@/assets/images/rou.jpg")
-            }
-          ]
-        }
       ]
     };
   },
@@ -603,7 +350,6 @@ export default {
   mounted() {},
   methods: {
     handleClick(tab, event) {
-      console.log(tab, event);
     },
     lookAll() {
         this.activeName = 'second';
@@ -616,7 +362,7 @@ export default {
         this.isHeight2 = !this.isHeight2;
       } else if (type === 3) {
         this.isHeight3 = !this.isHeight3;
-      }else {
+      }else if (type === 4) {
         this.isHeight4 = !this.isHeight4;
       }
     },
@@ -625,7 +371,7 @@ export default {
         this.$router.push({
                 path: '/menu/menuDetail',
             });
-    }
+    },
   },
   watch: {}
 };

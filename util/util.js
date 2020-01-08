@@ -5,6 +5,9 @@ export default {
     Hub () {
         return Hub
     },
+    getUrlKey: function (name) {
+        return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null
+    },
     // 对象的克隆
     cloneObj (obj) {
         var o;
