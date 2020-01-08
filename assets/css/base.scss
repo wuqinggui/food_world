@@ -1269,3 +1269,24 @@ input:-moz-placeholder {
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+
+.transition-img{
+	/*动画效果过渡时间*/
+	-webkit-transition-delay: 0s;
+	-webkit-transition-duration: 1s;
+	-webkit-transition-property: all;
+	-webkit-transition-timing-function: ease;
+	&:hover{
+		// box-shadow:0px 15px 30px rgba(0,0,0,0.1) ;
+		// transform: translate3d(0,-2px,0) scale(1.1, 1.1);
+		/*鼠标悬停图片放大*/
+		transform: scale(1.1, 1.1);
+		-ms-transform: scale(1.1, 1.1);
+		/* IE 9 */
+		-moz-transform: scale(1.1, 1.1);
+		/* Firefox */
+		-webkit-transform: scale(1.1, 1.1);
+		/* Safari 和 Chrome */
+		-o-transform: scale(1.1, 1.1);
+	}
+}

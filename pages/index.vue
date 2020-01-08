@@ -6,7 +6,7 @@
                 <!-- <a :href="bannerItem.link" target="_blank" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
                 <!-- <a href="javascript:void(0);" class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{backgroundImage:'url('+ bannerItem.pic_url + ')',backgroundSize:'100% 100%',height:swiperHeight+'px'}"></a> -->
                 <div class="swiper-slide" v-for="(bannerItem, bannerIndex) in bannerList"  :key="bannerIndex" :style="{height:swiperHeight+'px'}">
-                    <img v-lazy="bannerItem.pic_url" alt="" class="" :style="{width: '100%', height:swiperHeight+'px'}">
+                    <img v-lazy="bannerItem.pic_url" alt="" class="transition-img" :style="{width: '100%', height:swiperHeight+'px'}">
                 </div>
             </div>
             <!-- 分页器导航 -->
@@ -36,7 +36,7 @@
                 <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
                     <li class="pull-left" v-for="(menuItem, menuIndex) in menuList" :key="menuIndex">
                         <div class="menu-menuItem mb20 is-click" :class="((menuIndex + 1)%4) > 0 ? 'menu-menuItem-mr' : ''" @click="goMenuDetail(menuItem)">
-                            <img v-lazy="menuItem.imgUrl" alt="" class="img radius4">
+                            <img v-lazy="menuItem.imgUrl" alt="" class="img radius4 transition-img">
                             <div class="f14 gray3">{{menuItem.name}}</div>
                             <div class="f14 gray3 menu-menuItem-description">{{menuItem.description}}</div>
                         </div>
@@ -58,7 +58,7 @@
                 <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
                     <li class="pull-left" v-for="(foodItem, foodIndex) in foodList" :key="foodIndex">
                         <div class="foods-foodsItem mb25 is-click" :class="((foodIndex + 1)%7) > 0 ? '' : 'mr0'" @click="goFoodsDetail(foodItem)">
-                            <img v-lazy="foodItem.imgUrl" alt="" class="img radius4">
+                            <img v-lazy="foodItem.imgUrl" alt="" class="img radius4 transition-img">
                             <div class="f14 gray3 text-center">{{foodItem.name}}</div>
                         </div>
                     </li>
@@ -84,7 +84,7 @@
                 <ul class="clearfix wow" data-wow-duration = '1s' data-wow-offset='10'>
                     <li class="pull-left" v-for="(foragingItem, foragingIndex) in foragingList" :key="foragingIndex">
                         <div class="foraging-foragingItem mb20 is-click radius4" :class="((foragingIndex + 1)%4) > 0 ? 'foraging-foragingItem-mr' : ''" @click="goForagingDetail(foragingItem)">
-                            <img v-lazy="foragingItem.imgUrl" alt="" class="img">
+                            <img v-lazy="foragingItem.imgUrl" alt="" class="img transition-img">
                             <div class="foraging-foragingItem-bottom pl10 pr10 pb5">
                                 <div class="f14 gray3 text-overflow ">{{foragingItem.title}}</div>
                                 <div class="row ju-b verticle-center lh200">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="row mb30 wow" data-wow-duration = '1s' data-wow-offset='10'>
-                    <img v-lazy="informationData.imgUrl" alt="" class="informationData-img">
+                    <img v-lazy="informationData.imgUrl" alt="" class="informationData-img transition-img">
                     <div class="flex-1 p15 column ju-b">
                         <div class="f16 gray3 lh150">{{informationData.title}}</div>
                         <div class="f12 gray9 lh200">{{informationData.date}}</div>
@@ -456,74 +456,5 @@ export default {
 </script>
 
 <style lang="scss">
-.index-container{
-	// 轮播图
-	.swiper-container{
-		width: 100%;
-        min-width: 1024px;
-        margin-top: 4px;
-		.swiper-pagination-bullet-active{
-			background-color: #ffb800;
-		}
-		.swiper-button-prev{
-			width: 30px;
-			height: 30px;
-			left: 50px;
-			border-radius: 50%;
-			background-size: 50% 50%;
-			background-color: #474747;
-			opacity: 0.7;
-		}
-		.swiper-button-next{
-			width: 30px;
-			height: 30px;
-			right: 50px;
-			border-radius: 50%;
-			background-size: 50% 50%;
-			background-color: #474747;
-			opacity: 0.7;
-		}
-	}
-	.menu-box{
-		.menu-menuItem{
-			width: 200px;
-            &:hover {
-              .menu-menuItem-description {
-                display: block !important;
-              }
-            }
-			.menu-menuItem-description{
-                display: none;
-                width: 100%;
-                height: 100%;
-            }
-		}
-		.menu-menuItem-mr{
-			margin-right: 74px;
-		}
-	}
-	.foods-box{
-		.foods-foodsItem{
-			width: 123px;
-			margin-right: 27px;
-		}
-	}
-	.foraging-box{
-		.foraging-foragingItem{
-			width: 200px;
-		}
-		.foraging-foragingItem-mr{
-			margin-right: 74px;
-		}
-		.foraging-foragingItem-bottom{
-			box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.08);
-		}
-	}
-	.foraging-box{
-		.informationData-img{
-			width: 218px;
-			height: 132px;
-		}
-	}
-}
+
 </style>
