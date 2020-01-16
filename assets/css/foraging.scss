@@ -1,0 +1,30 @@
+.foraging-container {
+  .foraging-city {
+    border: solid red 1px;
+    position: relative;
+    i {
+      -moz-transition: all 0.3s;
+      -moz-transform: rotate(0deg);
+      -webkit-transition: all 0.3s;
+      -webkit-transform: rotate(0deg);
+      &.shoewRotate1 {
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+      }
+    }
+    .selectCity-list {
+      position: absolute;
+      top: 30px;
+      left: 65px;
+      width: 353px;
+      min-height: 100px;
+      border: solid blue 1px;
+
+      -webkit-animation-duration: 1s; /*动画持续时间*/
+      -webkit-animation-iteration-count: 1; /*动画次数*/
+      -webkit-animation-delay: 0s; /*延迟时间*/
+      animation-fill-mode:forwards;//规定当动画不播放时（当动画完成时，或当动画有一个延迟未开始播放时），要应用到元素的样式。
+
+    }
+  }
+}
