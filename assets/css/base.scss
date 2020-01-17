@@ -359,7 +359,9 @@ input:-moz-placeholder {
 .text-red {
   color: #e35850 !important;
 }
-
+.text-hs{
+  color: #ffb800 !important;
+}
 .redf43 {
   color: #ff4433 !important;
 }
@@ -408,7 +410,9 @@ input:-moz-placeholder {
 .bg-gray {
   background: #ccc !important;
 }
-
+.bg-hs{
+  background: #ffb800 !important;
+}
 .bg-base {
   background: #efefef !important;
 }
@@ -1198,6 +1202,10 @@ input:-moz-placeholder {
 .al-c {
   align-items: center;
 }
+.al-f {
+  align-items:flex-start ;
+}
+
 .ju-a {
   justify-content: space-around;
   -webkit-justify-content: space-around;
@@ -1404,12 +1412,10 @@ body,
   0% {
     opacity: 1;
     visibility: visible;
-    height: auto;
   }
   100% {
     opacity: 0;
     visibility: hidden;
-    height: 0;
   }
 }
 /* 渐渐退出动画 */
@@ -1422,12 +1428,10 @@ body,
   0% {
     opacity: 0;
     visibility: hidden;
-    height: 0;
   }
   100% {
    opacity: 1;
    visibility: visible;
-   height: auto;
   }
 }
 
